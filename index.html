@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Risk Report — 15 May 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    background: #F4F5F7;
+    color: #1A1D23;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #F4F5F7;
+    padding: 24px 16px 40px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 1px solid #E4E6EA;
+  }
+  .header-stripe {
+    height: 4px;
+    background: linear-gradient(90deg, #0A2E6E 0%, #1A5FBF 50%, #0A2E6E 100%);
+  }
+  .header-body {
+    padding: 28px 32px 24px;
+  }
+  
+  .bank-name {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #1A5FBF;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .report-title {
+    font-size: 24px;
+    font-weight: 300;
+    color: #0A2E6E;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .report-title strong { font-weight: 700; }
+  .date-badge {
+    text-align: right;
+  }
+  .date-pill {
+    background: #0A2E6E;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    padding: 7px 16px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .date-sub {
+    font-size: 10px;
+    color: #9EA3AE;
+    margin-top: 5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  .kpi {
+    flex: 1;
+    padding: 14px 18px;
+    border-right: 1px solid #EEF0F3;
+  }
+  .kpi:last-child { border-right: none; }
+  .kpi-label { font-size: 10px; color: #9EA3AE; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .kpi-val { font-size: 15px; font-weight: 600; color: #1A1D23; }
+  .kpi-val.up { color: #1A7A4A; }
+  .kpi-val.dn { color: #C0392B; }
+  .kpi-val.blue { color: #1A5FBF; }
+
+  /* ── SALUTATION ── */
+  .salutation {
+    background: #fff;
+    border: 1px solid #E4E6EA;
+    border-radius: 10px;
+    padding: 18px 24px;
+    font-size: 13px;
+    color: #4A5060;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+  .sec-num {
+    font-size: 10px;
+    font-weight: 700;
+    color: #1A5FBF;
+    background: #EBF2FF;
+    border: 1px solid #C5D9F5;
+    padding: 2px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.1em;
+  }
+  .sec-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0A2E6E;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .sec-line { flex: 1; height: 1px; background: #E4E6EA; }
+
+  /* ── CARDS ── */
+  .card {
+    background: #ffffff;
+    border: 1px solid #E4E6EA;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .card-head {
+    background: #F8F9FB;
+    border-bottom: 1px solid #E4E6EA;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-head-title { font-size: 13px; font-weight: 600; color: #1A1D23; }
+  .card-head-sub { font-size: 11px; color: #9EA3AE; margin-top: 2px; }
+
+  /* ── ALLOC BARS ── */
+  .alloc-body { padding: 18px 20px; }
+  .alloc-row { margin-bottom: 14px; }
+  .alloc-row:last-child { margin-bottom: 0; }
+  .alloc-top { display: flex; justify-content: space-between; margin-bottom: 6px; align-items: baseline; }
+  .alloc-name { font-size: 13px; color: #1A1D23; font-weight: 500; }
+  .alloc-right { display: flex; gap: 12px; align-items: baseline; }
+  .alloc-pct { font-size: 13px; font-weight: 700; color: #0A2E6E; }
+  .alloc-amt { font-size: 11px; color: #9EA3AE; }
+  .bar-track { height: 6px; background: #EEF0F3; border-radius: 3px; overflow: hidden; }
+  .bar-navy  { background: #0A2E6E; border-radius: 3px; }
+  .bar-green { background: #1A7A4A; border-radius: 3px; }
+  .bar-sky   { background: #1A8FBF; border-radius: 3px; }
+
+  /* ── STATS GRID ── */
+  /* .stats-grid {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid #EEF0F3;
+  } */
+  .stat {
+    flex: 1;
+    padding: 14px 16px;
+    border-right: 1px solid #EEF0F3;
+    text-align: center;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-lbl { font-size: 10px; color: #9EA3AE; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
+  .stat-val { font-size: 14px; font-weight: 600; color: #1A1D23; }
+  .stat-val.up { color: #1A7A4A; }
+  .stat-val.dn { color: #C0392B; }
+  .stat-val.blue { color: #1A5FBF; }
+
+  /* ── NARRATIVE ── */
+  .narrative {
+    padding: 14px 20px;
+    font-size: 12.5px;
+    color: #4A5060;
+    line-height: 1.75;
+    border-top: 1px solid #EEF0F3;
+    text-align: justify;
+  }
+  .narrative strong { color: #0A2E6E; font-weight: 600; }
+
+  /* ── RECOMMENDATION ── */
+  .rec-block {
+    background: #F0F5FF;
+    border: 1px solid #C5D9F5;
+    border-left: 3px solid #1A5FBF;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    font-size: 12.5px;
+    color: #2A4070;
+    line-height: 1.7;
+    text-align: justify;
+  }
+  .rec-head {
+    font-size: 10px;
+    font-weight: 700;
+    color: #1A5FBF;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  /* ── EQUITY TABLE ── */
+  .eq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .eq-table th {
+    background: #F8F9FB;
+    padding: 9px 14px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    color: #9EA3AE;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #E4E6EA;
+  }
+  .eq-table th:not(:first-child) { text-align: right; }
+  .eq-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #F0F1F4;
+    color: #4A5060;
+    vertical-align: middle;
+  }
+  .eq-table tr:last-child td { border-bottom: none; }
+  .eq-table td.ticker { font-weight: 700; color: #1A1D23; font-size: 13px; }
+  .eq-table td.num { text-align: right; font-size: 12.5px; }
+  .eq-table td.gain { color: #1A7A4A; font-weight: 600; }
+  .total-row td {
+    background: #F8F9FB;
+    font-weight: 700;
+    color: #0A2E6E !important;
+    border-top: 2px solid #E4E6EA;
+  }
+
+  /* ── REC PILLS ── */
+  .pill {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .p-hold    { background: #EBF2FF; color: #1A5FBF; }
+  .p-buy     { background: #E6F5EE; color: #1A7A4A; }
+  .p-sell    { background: #FDECEA; color: #C0392B; }
+  .p-acc     { background: #FFF8E6; color: #8A6000; }
+  .p-retain  { background: #EBF2FF; color: #1A5FBF; }
+
+  /* ── FX CARDS ── */
+  /* .fx-grid { display: flex; gap: 10px; } */
+  .fx-card {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #E4E6EA;
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .fx-lbl { font-size: 10px; font-weight: 700; color: #9EA3AE; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .fx-rate { font-size: 20px; font-weight: 700; color: #0A2E6E; margin-bottom: 5px; letter-spacing: -0.02em; }
+  .fx-chg { font-size: 11px; font-weight: 600; }
+  .fx-chg.up { color: #1A7A4A; }
+  .fx-chg.dn { color: #C0392B; }
+  .fx-chg.flat { color: #9EA3AE; }
+  .fx-prev { font-size: 11px; color: #9EA3AE; margin-top: 4px; }
+
+  /* ── LIQUIDITY TABLE ── */
+  .liq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .liq-table thead tr {
+    background: #F8F9FB;
+    border-bottom: 1px solid #E4E6EA;
+  }
+  .liq-table th {
+    padding: 9px 14px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    color: #9EA3AE;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .liq-table th:last-child,
+  .liq-table th:nth-child(3),
+  .liq-table th:nth-child(4) { text-align: right; }
+  .liq-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #F0F1F4;
+    color: #4A5060;
+    font-size: 12.5px;
+  }
+  .liq-table tr:last-child td { border-bottom: none; }
+  .liq-table td.metric-name { color: #1A1D23; font-weight: 500; }
+  .liq-table td.limit { color: #9EA3AE; text-align: right; font-size: 12px; }
+  .liq-table td.pos { text-align: right; font-weight: 700; }
+  .liq-table td.pos.ok { color: #1A7A4A; }
+  .liq-table td.pos.breach { color: #C0392B; }
+  .liq-table td.status { text-align: right; }
+
+  .badge-ok {
+    display: inline-block;
+    background: #E6F5EE;
+    color: #1A7A4A;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+  .badge-breach {
+    display: inline-block;
+    background: #FDECEA;
+    color: #C0392B;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ALERT ── */
+  .alert {
+    background: #FDECEA;
+    border: 1px solid #F5C0BB;
+    border-left: 4px solid #C0392B;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: #6B1F1A;
+    line-height: 1.7;
+    text-align: justify;
+  }
+  .alert strong { color: #C0392B; }
+
+  /* ── FCY TABLE ── */
+  .fcy-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .fcy-table th {
+    background: #F8F9FB;
+    padding: 9px 16px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    color: #9EA3AE;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #E4E6EA;
+  }
+  .fcy-table th:not(:first-child) { text-align: right; }
+  .fcy-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid #F0F1F4;
+    font-size: 12.5px;
+    color: #4A5060;
+  }
+  .fcy-table tr:last-child td { border-bottom: none; }
+  .fcy-table td.item { font-weight: 600; color: #1A1D23; }
+  .fcy-table td.num { text-align: right; }
+  .fcy-table td.up { color: #1A7A4A; font-weight: 600; text-align: right; }
+  .fcy-table .total-row td { background: #F8F9FB; font-weight: 700; color: #0A2E6E; border-top: 2px solid #E4E6EA; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #ffffff;
+    border: 1px solid #E4E6EA;
+    border-radius: 10px;
+    padding: 22px 28px;
+    margin-top: 12px;
+  }
+  .footer-sig { font-size: 13px; color: #4A5060; line-height: 1.8; margin-bottom: 16px; }
+  .footer-sig strong { color: #0A2E6E; font-weight: 700; }
+  .footer-divider { height: 1px; background: #EEF0F3; margin-bottom: 14px; }
+  .footer-disc { font-size: 10px; color: #B0B5BF; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-stripe"></div>
+    <div class="header-body">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td valign="top">
+                <div class="bank-name">TrustBanc Financial Group</div>
+                <div class="report-title"> <strong>Market Risk Report</strong></div>
+            </td>
+    
+            <td align="right" valign="top">
+                <div class="date-pill">14 MAY 2026</div>
+                <div class="date-sub">Report date</div>
+            </td>
+        </tr>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td width="20%"><div class="kpi">
+                <div class="kpi-label">Portfolio value</div>
+                <div class="kpi-val">₦5.66bn</div>
+            </div></td>
+            <td width="20%"><div class="kpi">
+                <div class="kpi-label">Change vs prior</div>
+                <div class="kpi-val dn">▼ 0.90%</div>
+            </div></td>
+            <td width="20%"><div class="kpi">
+                <div class="kpi-label">Prior value</div>
+                <div class="kpi-val" style="color:#9EA3AE">₦5.68bn</div>
+            </div></td>
+            <td width="20%"><div class="kpi">
+                <div class="kpi-label">USD coverage</div>
+                <div class="kpi-val up">1.04×</div></td>
+            <td width="20%"><div class="kpi">
+                <div class="kpi-label">Liquidity breaches</div>
+                <div class="kpi-val dn">2 of 6</div>
+            </div></td>
+        </tr>
+    </table>
+              
+      </div>
+    </div>
+  
+
+  <!-- SALUTATION -->
+  <div class="salutation">
+    Dear Sir,<br>
+    Kindly find the Market Risk Report below as of <strong style="color:#0A2E6E">15th May 2026</strong> for your review. The report covers portfolio performance, asset-class updates, FX movements, and liquidity metrics.
+  </div>
+
+  <!-- 01 · PORTFOLIO OVERVIEW -->
+  <div class="section-label">
+    <span class="sec-num">01</span>
+    <span class="sec-title">Portfolio Overview</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-head-title">Total Securities Portfolio</div>
+        <div class="card-head-sub">Composition as at 14 May 2026</div>
+      </div>
+      <span style="background:#FDECEA;color:#C0392B;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px">▼ 0.90% MTM decline</span>
+    </div>
+    <div class="alloc-body">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;">
+
+    <!-- EUROBONDS -->
+    <tr>
+        <td style="font-size:13px;color:#1A1D23;font-weight:500;padding-bottom:6px;">
+            <strong>Eurobonds</strong>
+        </td>
+
+        <td align="right" style="font-size:13px;font-weight:700;color:#0A2E6E;padding-bottom:6px;">
+            54.95%
+        </td>
+
+        <td align="right" style="font-size:11px;color:#9EA3AE;padding-bottom:6px;width:90px;">
+            ₦3.11bn
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" style="padding-bottom:12px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="background:#EEF0F3;border-radius:3px;">
+                        <table width="54.95%">
+                            <tr>
+                                <td style="background:#1A8FBF;height:8px;"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+ 
+
+    <!-- NTB -->
+    <tr>
+        <td style="font-size:13px;color:#1A1D23;font-weight:500;padding-bottom:6px;">
+            <strong>Nigerian Treasury Bills</strong>
+        </td>
+
+        <td align="right" style="font-size:13px;font-weight:700;color:#0A2E6E;padding-bottom:6px;">
+            1.13%
+        </td>
+
+        <td align="right" style="font-size:11px;color:#9EA3AE;padding-bottom:6px;width:90px;">
+            ₦64.01m
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" style="padding-bottom:6px;">
+            <table width="100%">
+                <tr>
+                    <td style="background:#EEF0F3;border-radius:3px;">
+                        <table width="4%"> <!-- small bump so it shows -->
+                            <tr>
+                                <td style="background:#1A8FBF;height:8px;"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- EQUITIES -->
+    <tr>
+        <td style="font-size:13px;color:#1A1D23;font-weight:500;padding-bottom:6px;">
+            <strong>Equities</strong>
+        </td>
+    
+        <td align="right" style="font-size:13px;font-weight:700;color:#0A2E6E;padding-bottom:6px;">
+            43.79%
+        </td>
+    
+        <td align="right" style="font-size:11px;color:#9EA3AE;padding-bottom:6px;width:90px;">
+            ₦2.48bn
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="3" style="padding-bottom:12px;">
+            <table width="100%">
+                <tr>
+                    <td style="background:#EEF0F3;border-radius:3px;">
+                        <table width="43.79%">
+                            <tr>
+                                <td style="background:#1A8FBF;height:8px;"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+    </div>
+  </div>
+
+  <!-- 02 · EUROBONDS -->
+  <div class="section-label">
+    <span class="sec-num">02</span>
+    <span class="sec-title">Eurobond Portfolio</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-head-title">Access Perpetual &amp; ACCESS 6⅛ 21/09/26</div>
+        <div class="card-head-sub">Prices steady at 99.375 and 99.750 respectively</div>
+      </div>
+      <span style="background:#EBF2FF;color:#1A5FBF;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px">Duration ~0.55×</span>
+    </div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="gap: 0; border-top: 10px solid #060d17; border-collapse: collapse;">
+        <tr >
+            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
+                <div class="stat-lbl">THL value</div>
+                <div class="stat-val">₦1.90bn</div>
+            </div></td>
+            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
+                <div class="stat-lbl">THL MTM loss</div>
+                <div class="stat-val dn">−₦74.48m</div>
+            </div></td>
+            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
+                <div class="stat-lbl">THL return</div>
+                <div class="stat-val dn">−3.79%</div>
+            </div>
+        </td>
+        </tr>
+            <tr >
+            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
+                <div class="stat-lbl">TBAM value</div>
+                <div class="stat-val">₦1.22bn</div>
+            </div>
+        </td>
+            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
+                <div class="stat-lbl">TBAM MTM loss</div>
+                <div class="stat-val dn">−₦46.61m</div>
+            </div>
+        </td>
+        <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
+                <div class="stat-lbl">TBAM return</div>
+                <div class="stat-val dn">−3.67%</div>
+            </div>
+        </td>
+        </tr>
+    </table>
+    <div class="narrative">
+      <strong>Market tone:</strong> The global Eurobond market traded with a defensive and mildly bearish tone. Rising global yields, persistent inflation pressures, and geopolitical tensions drove broad-based repricing, while selective demand and liquidity conditions provided limited support. Modified duration of ~0.55× indicates limited sensitivity to interest rate movements.
+    </div>
+  </div>
+
+  <div class="rec-block">
+    <div class="rec-head">Recommendation — Eurobonds</div>
+    Maintain a <strong>defensive and selective approach</strong>. Focus on short-to-mid tenor exposures while limiting duration risk amid rising global yields. Avoid aggressive near-term positioning.
+  </div>
+
+  <!-- 03 · NTB -->
+  <div class="section-label">
+    <span class="sec-num">03</span>
+    <span class="sec-title">Nigerian Treasury Bills</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-head-title">19-Nov-2026 Paper</div>
+        <div class="card-head-sub">Yield: 16.45% — stable</div>
+      </div>
+    </div>
+    
+  </div>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td width="33%" style="padding-right:5px;">
+            <div class="fx-card">
+                <div class="stat">
+                    <div class="stat-lbl">MTM value</div>
+                    <div class="stat-val">₦64.01m</div>
+                </div>
+            </div>
+        </td>
+
+        <td width="33%" style="padding:0 5px;">
+            <div class="fx-card">
+                <div class="stat">
+                    <div class="stat-lbl">Cost base</div>
+                    <div class="stat-val">₦63.88m</div>
+                </div>
+            </div>
+        </td>
+
+        <td width="33%" style="padding-left:5px;">
+            <div class="fx-card">
+                <div class="stat">
+                    <div class="stat-lbl">MTM gain</div>
+                    <div class="stat-val up">+₦0.13m</div>
+                </div>
+            </div>
+        </td>
+        <td width="33%" style="padding-left:5px;">
+            <div class="fx-card">
+                <div class="stat">
+                    <div class="stat-lbl">Return</div>
+                    <div class="stat-val up">+0.20%</div>
+                </div>            
+            </div>
+        </td>
+    </tr>
+</table>
+  <div class="rec-block">
+    <div class="rec-head">Recommendation — NTBs</div>
+    Maintain a <strong>cautious and selective stance</strong>. Selectively accumulate mid- to long-tenor bills at higher yields. Avoid aggressive near-term positioning.
+  </div>
+
+  <!-- 04 · FCY -->
+  <div class="section-label">
+    <span class="sec-num">04</span>
+    <span class="sec-title">Customer Fund (FCY) — USD</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-head-title">USD Portfolio — Coverage 1.04×</div>
+        <div class="card-head-sub">Adequate liquidity maintained · Ratio unchanged period-on-period</div>
+      </div>
+    </div>
+    <table class="fcy-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Current (USD)</th>
+          <th>Prior (USD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item">Eurobond, Coupon &amp; Placements</td>
+          <td class="num">3,826,727.93</td>
+          <td class="num" style="color:#9EA3AE">3,825,221.09</td>
+        </tr>
+        <tr>
+          <td class="item">Client Deposit + Accrued Interest</td>
+          <td class="num">3,664,530.97</td>
+          <td class="num" style="color:#9EA3AE">3,663,997.88</td>
+        </tr>
+        <tr class="total-row">
+          <td class="item">Overall Gain</td>
+          <td class="up">162,196.96</td>
+          <td class="up" style="text-align:right">161,223.21</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 05 · EQUITIES THL -->
+  <div class="section-label">
+    <span class="sec-num">05</span>
+    <span class="sec-title">Quoted Equities — THL Portfolio</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-head-title">THL Holdings</div>
+        <div class="card-head-sub">Value ₦1,041.49m · Cost ₦760.93m · Net gain ₦280.56m (+36.9%)</div>
+      </div>
+    </div>
+    <table class="eq-table">
+      <thead>
+        <tr>
+          <th>Equity</th>
+          <th>Current (₦m)</th>
+          <th>Cost (₦m)</th>
+          <th>Gain (₦m)</th>
+          <th>Return</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">ARADEL</td>
+          <td class="num">512.50</td>
+          <td class="num">304.88</td>
+          <td class="num gain">+207.62</td>
+          <td class="num gain">+68.1%</td>
+          <td><span class="pill p-retain">Maintain</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">MTNN</td>
+          <td class="num">528.99</td>
+          <td class="num">456.05</td>
+          <td class="num gain">+72.94</td>
+          <td class="num gain">+16.0%</td>
+          <td><span class="pill p-hold">Hold</span></td>
+        </tr>
+        <tr class="total-row">
+          <td>Total</td>
+          <td class="num">1,041.49</td>
+          <td class="num">760.93</td>
+          <td class="num gain">+280.56</td>
+          <td class="num gain">+36.9%</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 06 · EQUITIES PROPRIETARY -->
+  <div class="section-label">
+    <span class="sec-num">06</span>
+    <span class="sec-title">Quoted Equities — Proprietary</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-head-title">Proprietary Holdings</div>
+        <div class="card-head-sub">Value ₦1,446.81m · Cost ₦982.29m · Net gain ₦464.52m (+47.3%)</div>
+      </div>
+    </div>
+    <table class="eq-table">
+      <thead>
+        <tr>
+          <th>Equity</th>
+          <th>Current (₦m)</th>
+          <th>Cost (₦m)</th>
+          <th>Gain (₦m)</th>
+          <th>Return</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">TIP</td>
+          <td class="num">370.00</td>
+          <td class="num">95.00</td>
+          <td class="num gain">+275.00</td>
+          <td class="num gain">+289.5%</td>
+          <td><span class="pill p-acc">Accumulate</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">MTNN</td>
+          <td class="num">417.50</td>
+          <td class="num">377.41</td>
+          <td class="num gain">+40.10</td>
+          <td class="num gain">+10.6%</td>
+          <td><span class="pill p-hold">Hold</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">ZICHIS</td>
+          <td class="num">10.30</td>
+          <td class="num">2.19</td>
+          <td class="num gain">+8.12</td>
+          <td class="num gain">+370.8%</td>
+          <td><span class="pill p-sell">Sell</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">DANGCEM</td>
+          <td class="num">354.00</td>
+          <td class="num">247.12</td>
+          <td class="num gain">+106.88</td>
+          <td class="num gain">+43.3%</td>
+          <td><span class="pill p-retain">Retain</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">GTCO</td>
+          <td class="num">295.00</td>
+          <td class="num">260.58</td>
+          <td class="num gain">+34.42</td>
+          <td class="num gain">+13.2%</td>
+          <td><span class="pill p-buy">Buy</span></td>
+        </tr>
+        <tr class="total-row">
+          <td>Total</td>
+          <td class="num">1,446.80</td>
+          <td class="num">982.29</td>
+          <td class="num gain">+464.52</td>
+          <td class="num gain">+47.3%</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 07 · FX -->
+  <div class="section-label">
+    <span class="sec-num">07</span>
+    <span class="sec-title">FX Market Update</span>
+    <div class="sec-line"></div>
+  </div>
+
+  
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td width="33%" style="padding-right:5px;">
+    <div class="fx-card">
+        <div class="fx-lbl">Official window (CBN)</div>
+        <div class="fx-rate">₦1,370.56/$</div>
+        <div class="fx-chg up">▲ Naira firmed ₦5.06</div>
+        <div class="fx-prev">Previous: ₦1,375.62/$</div>
+    </div>
+    </td>
+
+    <td width="33%" style="padding:0 5px;">
+    <div class="fx-card">
+        <div class="fx-lbl">Parallel market</div>
+        <div class="fx-rate">₦1,400.00/$</div>
+        <div class="fx-chg flat">● Stable</div>
+        <div class="fx-prev">Previous: ₦1,400.00/$</div>
+    </div>
+    </td>
+
+    <td width="33%" style="padding-left:5px;">
+    <div class="fx-card">
+        <div class="fx-lbl">Official/Parallel spread</div>
+        <div class="fx-rate" style="color:#8A6000">₦29.44</div>
+        <div class="fx-chg flat">2.15% premium</div>
+        <div class="fx-prev">Spread narrowing</div>
+    </div>
+    </td>
+  </tr>
+</table>
+
+  <!-- 08 · LIQUIDITY -->
+  <div class="section-label">
+    <span class="sec-num">08</span>
+    <span class="sec-title">Liquidity Metrics</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <div class="card-head-title">Regulatory &amp; Internal Limits</div>
+        <div class="card-head-sub">Position as at 23rd April 2026</div>
+      </div>
+      <span style="background:#FDECEA;color:#C0392B;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px">2 breaches</span>
+    </div>
+    <table class="liq-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Limit</th>
+          <th>Position</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="metric-name">Liquidity Coverage Ratio</td>
+          <td class="limit">&gt; 100%</td>
+          <td class="pos ok">153.21%</td>
+          <td class="status"><span class="badge-ok">PASS</span></td>
+        </tr>
+        <tr>
+          <td class="metric-name">Liquidity Ratio</td>
+          <td class="limit">&gt; 30%</td>
+          <td class="pos breach">28.62%</td>
+          <td class="status"><span class="badge-breach">BREACH</span></td>
+        </tr>
+        <tr>
+          <td class="metric-name">Loans to Deposit Ratio</td>
+          <td class="limit">&lt; 50%</td>
+          <td class="pos ok">5.59%</td>
+          <td class="status"><span class="badge-ok">PASS</span></td>
+        </tr>
+        <tr>
+          <td class="metric-name">FX / Total Assets</td>
+          <td class="limit">&lt; 25%</td>
+          <td class="pos ok">0.78%</td>
+          <td class="status"><span class="badge-ok">PASS</span></td>
+        </tr>
+        <tr>
+          <td class="metric-name">Securities / Total Assets</td>
+          <td class="limit">&gt; 40%</td>
+          <td class="pos breach">11.89%</td>
+          <td class="status"><span class="badge-breach">BREACH</span></td>
+        </tr>
+        <tr>
+          <td class="metric-name">Financial Stability Ratio</td>
+          <td class="limit">≥ 100%</td>
+          <td class="pos ok">541.24%</td>
+          <td class="status"><span class="badge-ok">PASS</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert" >
+    <strong>⚠ Breaches noted:</strong> The <strong>Liquidity Ratio</strong> (28.62%) is below the 30% regulatory threshold, and <strong>Securities/Total Assets</strong> (11.89%) is materially below the 40% minimum. All other metrics are within acceptable limits. Immediate management review is recommended.
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-sig">
+      Regards,<br>
+      <strong>Market Risk &amp; Treasury Analytics Desk</strong><br>
+      <span style="color:#9EA3AE;font-size:12px">TrustBanc Financial Group &nbsp;·&nbsp; Market Risk Report &nbsp;·&nbsp; 14 May 2026</span>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-disc">
+      This report is prepared for internal use only and is intended solely for the named recipient. The information contained herein is based on data available at the time of preparation and may be subject to revision. Past performance is not indicative of future results. This document does not constitute investment advice.
+    </div>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
