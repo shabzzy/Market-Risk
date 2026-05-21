@@ -1,978 +1,1417 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Market Risk Report — 15 May 2026</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Market Risk Report — 21 May 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    <!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+    <style>
+        body,
+        table,
+        td,
+        p,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
 
-  body {
-    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-    background: #F4F5F7;
-    color: #1A1D23;
-    -webkit-font-smoothing: antialiased;
-  }
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
 
-  .wrapper {
-    max-width: 680px;
-    margin: 0 auto;
-    background: #F4F5F7;
-    padding: 24px 16px 40px;
-  }
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
 
-  /* ── HEADER ── */
-  .header {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 12px;
-    border: 1px solid #E4E6EA;
-  }
-  .header-stripe {
-    height: 4px;
-    background: linear-gradient(90deg, #0A2E6E 0%, #1A5FBF 50%, #0A2E6E 100%);
-  }
-  .header-body {
-    padding: 28px 32px 24px;
-  }
-  
-  .bank-name {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: #1A5FBF;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .report-title {
-    font-size: 24px;
-    font-weight: 300;
-    color: #0A2E6E;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-  }
-  .report-title strong { font-weight: 700; }
-  .date-badge {
-    text-align: right;
-  }
-  .date-pill {
-    background: #0A2E6E;
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    padding: 7px 16px;
-    border-radius: 4px;
-    display: inline-block;
-  }
-  .date-sub {
-    font-size: 10px;
-    color: #9EA3AE;
-    margin-top: 5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: right;
-  }
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #F2F4F7;
+        }
 
-  .kpi {
-    flex: 1;
-    padding: 14px 18px;
-    border-right: 1px solid #EEF0F3;
-  }
-  .kpi:last-child { border-right: none; }
-  .kpi-label { font-size: 10px; color: #9EA3AE; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
-  .kpi-val { font-size: 15px; font-weight: 600; color: #1A1D23; }
-  .kpi-val.up { color: #1A7A4A; }
-  .kpi-val.dn { color: #C0392B; }
-  .kpi-val.blue { color: #1A5FBF; }
+        @media only screen and (max-width:620px) {
+            .mobile-full {
+                width: 100% !important;
+                display: block !important;
+            }
 
-  /* ── SALUTATION ── */
-  .salutation {
-    background: #fff;
-    border: 1px solid #E4E6EA;
-    border-radius: 10px;
-    padding: 18px 24px;
-    font-size: 13px;
-    color: #4A5060;
-    line-height: 1.7;
-    margin-bottom: 12px;
-    text-align: justify;
-}
+            .mobile-pad {
+                padding: 12px !important;
+            }
 
-  .sec-num {
-    font-size: 10px;
-    font-weight: 700;
-    color: #1A5FBF;
-    background: #EBF2FF;
-    border: 1px solid #C5D9F5;
-    padding: 2px 9px;
-    border-radius: 3px;
-    letter-spacing: 0.1em;
-  }
-  .sec-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #0A2E6E;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-  .sec-line { flex: 1; height: 1px; background: #E4E6EA; }
+            .mobile-hide {
+                display: none !important;
+            }
 
-  /* ── CARDS ── */
-  .card {
-    background: #ffffff;
-    border: 1px solid #E4E6EA;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-  .card-head {
-    background: #F8F9FB;
-    border-bottom: 1px solid #E4E6EA;
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .card-head-title { font-size: 13px; font-weight: 600; color: #1A1D23; }
-  .card-head-sub { font-size: 11px; color: #9EA3AE; margin-top: 2px; }
-
-  /* ── ALLOC BARS ── */
-  .alloc-body { padding: 18px 20px; }
-  .alloc-row { margin-bottom: 14px; }
-  .alloc-row:last-child { margin-bottom: 0; }
-  .alloc-top { display: flex; justify-content: space-between; margin-bottom: 6px; align-items: baseline; }
-  .alloc-name { font-size: 13px; color: #1A1D23; font-weight: 500; }
-  .alloc-right { display: flex; gap: 12px; align-items: baseline; }
-  .alloc-pct { font-size: 13px; font-weight: 700; color: #0A2E6E; }
-  .alloc-amt { font-size: 11px; color: #9EA3AE; }
-  .bar-track { height: 6px; background: #EEF0F3; border-radius: 3px; overflow: hidden; }
-  .bar-navy  { background: #0A2E6E; border-radius: 3px; }
-  .bar-green { background: #1A7A4A; border-radius: 3px; }
-  .bar-sky   { background: #1A8FBF; border-radius: 3px; }
-
-  /* ── STATS GRID ── */
-  /* .stats-grid {
-    display: flex;
-    gap: 0;
-    border-top: 1px solid #EEF0F3;
-  } */
-  .stat {
-    flex: 1;
-    padding: 14px 16px;
-    border-right: 1px solid #EEF0F3;
-    text-align: center;
-  }
-  .stat:last-child { border-right: none; }
-  .stat-lbl { font-size: 10px; color: #9EA3AE; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 5px; }
-  .stat-val { font-size: 14px; font-weight: 600; color: #1A1D23; }
-  .stat-val.up { color: #1A7A4A; }
-  .stat-val.dn { color: #C0392B; }
-  .stat-val.blue { color: #1A5FBF; }
-
-  /* ── NARRATIVE ── */
-  .narrative {
-    padding: 14px 20px;
-    font-size: 12.5px;
-    color: #4A5060;
-    line-height: 1.75;
-    border-top: 1px solid #EEF0F3;
-    text-align: justify;
-  }
-  .narrative strong { color: #0A2E6E; font-weight: 600; }
-
-  /* ── RECOMMENDATION ── */
-  .rec-block {
-    background: #F0F5FF;
-    border: 1px solid #C5D9F5;
-    border-left: 3px solid #1A5FBF;
-    border-radius: 0 8px 8px 0;
-    padding: 12px 16px;
-    margin-bottom: 10px;
-    font-size: 12.5px;
-    color: #2A4070;
-    line-height: 1.7;
-    text-align: justify;
-  }
-  .rec-head {
-    font-size: 10px;
-    font-weight: 700;
-    color: #1A5FBF;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
-
-  /* ── EQUITY TABLE ── */
-  .eq-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12.5px;
-  }
-  .eq-table th {
-    background: #F8F9FB;
-    padding: 9px 14px;
-    text-align: left;
-    font-size: 10px;
-    font-weight: 700;
-    color: #9EA3AE;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-bottom: 1px solid #E4E6EA;
-  }
-  .eq-table th:not(:first-child) { text-align: right; }
-  .eq-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid #F0F1F4;
-    color: #4A5060;
-    vertical-align: middle;
-  }
-  .eq-table tr:last-child td { border-bottom: none; }
-  .eq-table td.ticker { font-weight: 700; color: #1A1D23; font-size: 13px; }
-  .eq-table td.num { text-align: right; font-size: 12.5px; }
-  .eq-table td.gain { color: #1A7A4A; font-weight: 600; }
-  .total-row td {
-    background: #F8F9FB;
-    font-weight: 700;
-    color: #0A2E6E !important;
-    border-top: 2px solid #E4E6EA;
-  }
-
-  /* ── REC PILLS ── */
-  .pill {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 3px 9px;
-    border-radius: 3px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .p-hold    { background: #EBF2FF; color: #1A5FBF; }
-  .p-buy     { background: #E6F5EE; color: #1A7A4A; }
-  .p-sell    { background: #FDECEA; color: #C0392B; }
-  .p-acc     { background: #FFF8E6; color: #8A6000; }
-  .p-retain  { background: #EBF2FF; color: #1A5FBF; }
-
-  /* ── FX CARDS ── */
-  /* .fx-grid { display: flex; gap: 10px; } */
-  .fx-card {
-    flex: 1;
-    background: #ffffff;
-    border: 1px solid #E4E6EA;
-    border-radius: 10px;
-    padding: 16px 18px;
-  }
-  .fx-lbl { font-size: 10px; font-weight: 700; color: #9EA3AE; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
-  .fx-rate { font-size: 20px; font-weight: 700; color: #0A2E6E; margin-bottom: 5px; letter-spacing: -0.02em; }
-  .fx-chg { font-size: 11px; font-weight: 600; }
-  .fx-chg.up { color: #1A7A4A; }
-  .fx-chg.dn { color: #C0392B; }
-  .fx-chg.flat { color: #9EA3AE; }
-  .fx-prev { font-size: 11px; color: #9EA3AE; margin-top: 4px; }
-
-  /* ── LIQUIDITY TABLE ── */
-  .liq-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12.5px;
-  }
-  .liq-table thead tr {
-    background: #F8F9FB;
-    border-bottom: 1px solid #E4E6EA;
-  }
-  .liq-table th {
-    padding: 9px 14px;
-    text-align: left;
-    font-size: 10px;
-    font-weight: 700;
-    color: #9EA3AE;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .liq-table th:last-child,
-  .liq-table th:nth-child(3),
-  .liq-table th:nth-child(4) { text-align: right; }
-  .liq-table td {
-    padding: 11px 14px;
-    border-bottom: 1px solid #F0F1F4;
-    color: #4A5060;
-    font-size: 12.5px;
-  }
-  .liq-table tr:last-child td { border-bottom: none; }
-  .liq-table td.metric-name { color: #1A1D23; font-weight: 500; }
-  .liq-table td.limit { color: #9EA3AE; text-align: right; font-size: 12px; }
-  .liq-table td.pos { text-align: right; font-weight: 700; }
-  .liq-table td.pos.ok { color: #1A7A4A; }
-  .liq-table td.pos.breach { color: #C0392B; }
-  .liq-table td.status { text-align: right; }
-
-  .badge-ok {
-    display: inline-block;
-    background: #E6F5EE;
-    color: #1A7A4A;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 3px;
-    letter-spacing: 0.05em;
-  }
-  .badge-breach {
-    display: inline-block;
-    background: #FDECEA;
-    color: #C0392B;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 3px;
-    letter-spacing: 0.05em;
-  }
-
-  /* ── ALERT ── */
-  .alert {
-    background: #FDECEA;
-    border: 1px solid #F5C0BB;
-    border-left: 4px solid #C0392B;
-    border-radius: 0 8px 8px 0;
-    padding: 12px 16px;
-    margin-top: 10px;
-    font-size: 12.5px;
-    color: #6B1F1A;
-    line-height: 1.7;
-    text-align: justify;
-  }
-  .alert strong { color: #C0392B; }
-
-  /* ── FCY TABLE ── */
-  .fcy-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12.5px;
-  }
-  .fcy-table th {
-    background: #F8F9FB;
-    padding: 9px 16px;
-    text-align: left;
-    font-size: 10px;
-    font-weight: 700;
-    color: #9EA3AE;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-bottom: 1px solid #E4E6EA;
-  }
-  .fcy-table th:not(:first-child) { text-align: right; }
-  .fcy-table td {
-    padding: 11px 16px;
-    border-bottom: 1px solid #F0F1F4;
-    font-size: 12.5px;
-    color: #4A5060;
-  }
-  .fcy-table tr:last-child td { border-bottom: none; }
-  .fcy-table td.item { font-weight: 600; color: #1A1D23; }
-  .fcy-table td.num { text-align: right; }
-  .fcy-table td.up { color: #1A7A4A; font-weight: 600; text-align: right; }
-  .fcy-table .total-row td { background: #F8F9FB; font-weight: 700; color: #0A2E6E; border-top: 2px solid #E4E6EA; }
-
-  /* ── FOOTER ── */
-  .footer {
-    background: #ffffff;
-    border: 1px solid #E4E6EA;
-    border-radius: 10px;
-    padding: 22px 28px;
-    margin-top: 12px;
-  }
-  .footer-sig { font-size: 13px; color: #4A5060; line-height: 1.8; margin-bottom: 16px; }
-  .footer-sig strong { color: #0A2E6E; font-weight: 700; }
-  .footer-divider { height: 1px; background: #EEF0F3; margin-bottom: 14px; }
-  .footer-disc { font-size: 10px; color: #B0B5BF; line-height: 1.6; }
-</style>
+            .mobile-stack {
+                display: block !important;
+                width: 100% !important;
+                padding: 6px 12px !important;
+            }
+        }
+    </style>
 </head>
-<body>
-<div class="wrapper">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-stripe"></div>
-    <div class="header-body">
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+<body style="margin:0;padding:0;background:#F2F4F7;font-family:Arial,Helvetica,sans-serif;">
+
+    <!-- OUTER WRAPPER -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F2F4F7;">
         <tr>
-            <td valign="top">
-                <div class="bank-name">TrustBanc Financial Group</div>
-                <div class="report-title"> <strong>Market Risk Report</strong></div>
+            <td align="center" style="padding:20px 10px 32px;">
+
+                <!-- INNER CONTAINER -->
+                <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;">
+
+                    <!-- ══════════════════ HEADER ══════════════════ -->
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#0A2E6E;border-radius:10px;overflow:hidden;">
+                                <!-- gold top stripe -->
+                                <tr>
+                                    <td style="background:#C8A96E;height:4px;font-size:1px;line-height:1px;">&nbsp;</td>
+                                </tr>
+                                <!-- bank name + date -->
+                                <tr>
+                                    <td style="padding:22px 24px 16px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td valign="top">
+                                                    <p
+                                                        style="margin:0 0 5px;font-size:10px;font-weight:700;letter-spacing:3px;color:#C8A96E;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        TrustBanc</p>
+                                                    <p
+                                                        style="margin:0;font-size:20px;font-weight:700;color:#FFFFFF;font-family:Arial,sans-serif;">
+                                                        Market Risk Report</p>
+                                                </td>
+                                                <td align="right" valign="top">
+                                                    <p
+                                                        style="margin:0;display:inline-block;background:#C8A96E;color:#0A2E6E;font-size:11px;font-weight:700;letter-spacing:2px;padding:7px 14px;border-radius:4px;font-family:Arial,sans-serif;">
+                                                        21 May 2026</p>
+                                                    <p
+                                                        style="margin:4px 0 0;font-size:9px;color:#6B82A8;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        REPORT DATE</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- KPI bar -->
+                                <tr>
+                                    <td style="border-top:1px solid #1E3F80;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="20%" align="center"
+                                                    style="padding:12px 4px;border-right:1px solid #1E3F80;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#6B82A8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        PORTFOLIO</p>
+                                                    <p
+                                                        style="margin:0;font-size:13px;font-weight:700;color:#FFFFFF;font-family:Arial,sans-serif;">
+                                                        ₦5.66bn</p>
+                                                </td>
+                                                <td width="20%" align="center"
+                                                    style="padding:12px 4px;border-right:1px solid #1E3F80;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#6B82A8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        CHANGE</p>
+                                                    <p
+                                                        style="margin:0;font-size:13px;font-weight:700;color:#F07070;font-family:Arial,sans-serif;">
+                                                        <i class="fa-solid fa-arrow-up"
+                                                            style="color: rgb(10, 178, 51);"></i> 0.90%
+                                                    </p>
+                                                </td>
+                                                <td width="20%" align="center"
+                                                    style="padding:12px 4px;border-right:1px solid #1E3F80;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#6B82A8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        PRIOR</p>
+                                                    <p
+                                                        style="margin:0;font-size:13px;font-weight:700;color:#8A9AB8;font-family:Arial,sans-serif;">
+                                                        ₦5.68bn</p>
+                                                </td>
+                                                <td width="20%" align="center"
+                                                    style="padding:12px 4px;border-right:1px solid #1E3F80;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#6B82A8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        USD COVER</p>
+                                                    <p
+                                                        style="margin:0;font-size:13px;font-weight:700;color:#6DCCA0;font-family:Arial,sans-serif;">
+                                                        1.04×</p>
+                                                </td>
+                                                <td width="20%" align="center" style="padding:12px 4px;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#6B82A8;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        BREACHES</p>
+                                                    <p
+                                                        style="margin:0;font-size:13px;font-weight:700;color:#F07070;font-family:Arial,sans-serif;">
+                                                        2 of 6</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ SALUTATION ══════════════════ -->
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;">
+                                <tr>
+                                    <td
+                                        style="text-align: justify; padding:18px 22px;font-size:13px;color:#4A5060;line-height:1.8;font-family:Arial,sans-serif;">
+                                        Dear Sir,<br>
+                                        Kindly find the Market Risk Report below as of <strong
+                                            style="color:#0A2E6E;">21st May 2026</strong> for your review. The report
+                                        covers portfolio performance, asset-class updates, FX movements, and liquidity
+                                        metrics.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ SECTION HELPER MACRO ══════════════════ -->
+                    <!-- 01 · PORTFOLIO OVERVIEW -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        01</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        Portfolio Overview</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;overflow:hidden;">
+                                <!-- card header -->
+                                <tr>
+                                    <td style="background:#F8F9FB;padding:12px 18px;border-bottom:1px solid #E4E6EA;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td>
+                                                    <p
+                                                        style="margin:0;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                        Total Securities Portfolio</p>
+                                                    <p
+                                                        style="margin:2px 0 0;font-size:11px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                        Composition as at 21 May 2026</p>
+                                                </td>
+                                                <td align="right">
+                                                    <p
+                                                        style="margin:0;background:#c3EFc3;color:#C0392B;font-size:10px;font-weight:700;padding:4px 10px;border-radius:4px;display:inline-block;font-family:Arial,sans-serif;">
+                                                        <i class="fa-solid fa-arrow-up"
+                                                            style="color: rgb(10, 178, 51);"></i> 0.90% MTM DECLINE
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- allocations -->
+                                <tr>
+                                    <td style="padding:16px 18px;">
+                                        <!-- Eurobonds -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                            style="margin-bottom:12px;">
+                                            <tr>
+                                                <td
+                                                    style="font-size:12px;color:#1A1D23;font-weight:600;font-family:Arial,sans-serif;">
+                                                    Eurobonds</td>
+                                                <td align="right"
+                                                    style="font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    54.95%</td>
+                                                <td align="right" width="80"
+                                                    style="font-size:11px;color:#1d1f21;font-family:Arial,sans-serif;">
+                                                    <strong>₦3.11bn</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" style="padding-top:5px;">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                        style="background:#EEF0F3;border-radius:3px;">
+                                                        <tr>
+                                                            <td width="55%"
+                                                                style="background:#0A2E6E;height:7px;border-radius:3px;font-size:1px;">
+                                                                &nbsp;</td>
+                                                            <td style="font-size:1px;">&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- Equities -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                            style="margin-bottom:12px;">
+                                            <tr>
+                                                <td
+                                                    style="font-size:12px;color:#1A1D23;font-weight:600;font-family:Arial,sans-serif;">
+                                                    Equities</td>
+                                                <td align="right"
+                                                    style="font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    43.79%</td>
+                                                <td align="right" width="80"
+                                                    style="font-size:11px;color:#1d1f21;font-family:Arial,sans-serif;">
+                                                    <strong>₦2.48bn</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" style="padding-top:5px;">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                        style="background:#EEF0F3;border-radius:3px;">
+                                                        <tr>
+                                                            <td width="44%"
+                                                                style="background:#1A7A4A;height:7px;border-radius:3px;font-size:1px;">
+                                                                &nbsp;</td>
+                                                            <td style="font-size:1px;">&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- NTB -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td
+                                                    style="font-size:12px;color:#1A1D23;font-weight:600;font-family:Arial,sans-serif;">
+                                                    Nigerian Treasury Bills</td>
+                                                <td align="right"
+                                                    style="font-size:12px;font-weight:700;color:#1A8FBF;font-family:Arial,sans-serif;">
+                                                    1.13%</td>
+                                                <td align="right" width="80"
+                                                    style="font-size:11px;color:#1d1f21;font-family:Arial,sans-serif;">
+                                                    <strong>₦64.01m</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" style="padding-top:5px;">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                                        style="background:#EEF0F3;border-radius:3px;">
+                                                        <tr>
+                                                            <td width="2%"
+                                                                style="background:#1A8FBF;height:7px;border-radius:3px;font-size:1px;">
+                                                                &nbsp;</td>
+                                                            <td style="font-size:1px;">&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ 02 · EUROBONDS ══════════════════ -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        02</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        Eurobond Portfolio</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom:8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;overflow:hidden;">
+                                <tr>
+                                    <td style="background:#F8F9FB;padding:12px 18px;border-bottom:1px solid #E4E6EA;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td>
+                                                    <p
+                                                        style="margin:0;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                        Access Perpetual &amp; ACCESS 6&#8539; 21/09/26</p>
+                                                    <p
+                                                        style="margin:2px 0 0;font-size:11px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                        Prices steady at 99.25 and 99.5 respectively</p>
+                                                </td>
+                                                <td align="right">
+                                                    <p
+                                                        style="margin:0;background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:4px 10px;border-radius:4px;display:inline-block;font-family:Arial,sans-serif;">
+                                                        DURATION ~0.55×</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- stats row 1 -->
+                                <tr>
+                                    <td>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                            style="border-bottom:1px solid #EEF0F3;">
+                                            <tr>
+                                                <td width="33%" align="center"
+                                                    style="padding:12px 8px;border-right:1px solid #EEF0F3;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        THL VALUE</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                        ₦1.96bn</p>
+                                                </td>
+                                                <td width="33%" align="center"
+                                                    style="padding:12px 8px;border-right:1px solid #EEF0F3;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        THL MTM LOSS</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#C0392B;font-family:Arial,sans-serif;">
+                                                        −₦74.48m</p>
+                                                </td>
+                                                <td width="33%" align="center" style="padding:12px 8px;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        THL RETURN</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#C0392B;font-family:Arial,sans-serif;">
+                                                        −3.79%</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- stats row 2 -->
+                                <tr>
+                                    <td>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                            style="border-bottom:1px solid #EEF0F3;">
+                                            <tr>
+                                                <td width="33%" align="center"
+                                                    style="padding:12px 8px;border-right:1px solid #EEF0F3;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        TBAM VALUE</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                        ₦1.27bn</p>
+                                                </td>
+                                                <td width="33%" align="center"
+                                                    style="padding:12px 8px;border-right:1px solid #EEF0F3;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        TBAM MTM LOSS</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#C0392B;font-family:Arial,sans-serif;">
+                                                        −₦46.61m</p>
+                                                </td>
+                                                <td width="33%" align="center" style="padding:12px 8px;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        TBAM RETURN</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#C0392B;font-family:Arial,sans-serif;">
+                                                        −3.67%</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:14px 18px;font-size:12px;color:#4A5060;line-height:1.7;font-family:Arial,sans-serif; text-align: justify;">
+                                        <strong style="color:#0A2E6E;">Market tone:</strong> The global Eurobond market
+                                        traded with a defensive and mildly bearish tone. Rising global yields,
+                                        persistent inflation pressures, and geopolitical tensions drove broad-based
+                                        repricing. Modified duration of ~0.55× indicates limited interest rate
+                                        sensitivity consistent with short-dated maturities.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- rec -->
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="4" style="background:#1A5FBF;border-radius:2px 0 0 2px;">&nbsp;</td>
+                                    <td
+                                        style="text-align: justify; background:#F0F5FF;border:1px solid #C5D9F5;border-left:none;border-radius:0 6px 6px 0;padding:12px 16px;font-size:12px;color:#2A4070;line-height:1.7;font-family:Arial,sans-serif;">
+                                        <strong
+                                            style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A5FBF;display:block;margin-bottom:4px;">RECOMMENDATION
+                                            — EUROBONDS</strong>
+                                        Maintain a <strong>defensive and selective approach</strong>. Focus on
+                                        short-to-mid tenor exposures while limiting duration risk amid rising global
+                                        yields. Avoid aggressive near-term positioning.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ 03 · NTB ══════════════════ -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        03</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        Nigerian Treasury Bills</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom:8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;overflow:hidden;">
+                                <tr>
+                                    <td style="background:#F8F9FB;padding:12px 18px;border-bottom:1px solid #E4E6EA;">
+                                        <p
+                                            style="margin:0;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                            19-Nov-2026 Paper</p>
+                                        <p
+                                            style="margin:2px 0 0;font-size:11px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                            Yield: 16.45% — stable</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="25%" align="center"
+                                                    style="padding:13px 8px;border-right:1px solid #EEF0F3;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        MTM VALUE</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                        ₦64.26m</p>
+                                                </td>
+                                                <td width="25%" align="center"
+                                                    style="padding:13px 8px;border-right:1px solid #EEF0F3;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        COST BASE</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                        ₦64.14m</p>
+                                                </td>
+                                                <td width="25%" align="center"
+                                                    style="padding:13px 8px;border-right:1px solid #EEF0F3;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        MTM GAIN</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                        +₦0.12m</p>
+                                                </td>
+                                                <td width="25%" align="center" style="padding:13px 8px;">
+                                                    <p
+                                                        style="margin:0 0 4px;font-size:9px;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        RETURN</p>
+                                                    <p
+                                                        style="margin:0;font-size:14px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                        +0.19%</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="4"
+                                        style="background:#1A5FBF;border-radius:2px 0 0 2px; text-align: justify;">
+                                        &nbsp;</td>
+                                    <td
+                                        style="text-align: justify; background:#F0F5FF;border:1px solid #C5D9F5;border-left:none;border-radius:0 6px 6px 0;padding:12px 16px;font-size:12px;color:#2A4070;line-height:1.7;font-family:Arial,sans-serif;">
+                                        <strong
+                                            style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A5FBF;display:block;margin-bottom:4px;">RECOMMENDATION
+                                            — NTBs</strong>
+                                        Maintain a <strong>cautious and selective stance</strong>. Selectively
+                                        accumulate mid- to long-tenor bills at higher yields. Avoid aggressive near-term
+                                        positioning.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ 04 · FCY ══════════════════ -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        04</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        Customer Fund (FCY) — USD</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;overflow:hidden;">
+                                <tr>
+                                    <td style="background:#F8F9FB;padding:12px 18px;border-bottom:1px solid #E4E6EA;">
+                                        <p
+                                            style="margin:0;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                            USD Portfolio — Coverage 1.04×</p>
+                                        <p
+                                            style="margin:2px 0 0;font-size:11px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                            Adequate liquidity maintained &nbsp;·&nbsp; Ratio unchanged period-on-period
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr style="background:#F8F9FB;border-bottom:1px solid #E4E6EA;">
+                                                <td
+                                                    style="padding:8px 16px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Item</td>
+                                                <td align="right"
+                                                    style="padding:8px 16px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Current (USD)</td>
+                                                <td align="right"
+                                                    style="padding:8px 16px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Prior (USD)</td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;font-weight:600;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    Eurobond, Coupon &amp; Placements</td>
+                                                <td align="right"
+                                                    style="padding:11px 16px;font-size:12px;color:#21232b;font-family:Arial,sans-serif;">
+                                                    3,826,727.93</td>
+                                                <td align="right"
+                                                    style="padding:11px 16px;font-size:12px;color:#595c61;font-family:Arial,sans-serif;">
+                                                    3,825,221.09</td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;font-weight:600;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    Client Deposit + Accrued Interest</td>
+                                                <td align="right"
+                                                    style="padding:11px 16px;font-size:12px;color:#21232b;font-family:Arial,sans-serif;">
+                                                    3,664,530.97</td>
+                                                <td align="right"
+                                                    style="padding:11px 16px;font-size:12px;color:#595c61;font-family:Arial,sans-serif;">
+                                                    3,663,997.88</td>
+                                            </tr>
+                                            <tr style="background:#F8F9FB;">
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    Overall Gain</td>
+                                                <td align="right"
+                                                    style="padding:11px 16px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    162,196.96</td>
+                                                <td align="right"
+                                                    style="padding:11px 16px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    161,223.21</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ 05 · EQUITIES THL ══════════════════ -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        05</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        Quoted Equities — THL Portfolio</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;overflow:hidden;">
+                                <tr>
+                                    <td style="background:#F8F9FB;padding:12px 18px;border-bottom:1px solid #E4E6EA;">
+                                        <p
+                                            style="margin:0;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                            THL Holdings &nbsp;<span
+                                                style="font-size:11px;color:#9EA3AE;font-weight:400;">Value ₦1,041.49m
+                                                &nbsp;·&nbsp; Cost ₦760.93m &nbsp;·&nbsp;</span> <span
+                                                style="font-size:11px;font-weight:700;color:#1A7A4A;">Net gain +₦280.56m
+                                                (+36.9%)</span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr style="background:#F8F9FB;border-bottom:1px solid #E4E6EA;">
+                                                <td
+                                                    style="padding:8px 14px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Equity</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Current (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Cost (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Gain (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Return</td>
+                                                <td align="center"
+                                                    style="padding:8px 14px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Action</td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    ARADEL</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#08090a;font-family:Arial,sans-serif;">
+                                                    512.50</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#08090a;font-family:Arial,sans-serif;">
+                                                    304.88</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +207.62</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +68.1%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">MAINTAIN</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    MTNN</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#08090a;font-family:Arial,sans-serif;">
+                                                    528.99</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#08090a;font-family:Arial,sans-serif;">
+                                                    456.05</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +72.94</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +16.0%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">HOLD</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="background:#F8F9FB;border-top:2px solid #E4E6EA;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    Total</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    1,041.49</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    760.93</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +280.56</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +36.9%</td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ 06 · PROPRIETARY ══════════════════ -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        06</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        Quoted Equities — Proprietary Portfolio</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;overflow:hidden;">
+                                <tr>
+                                    <td style="background:#F8F9FB;padding:12px 18px;border-bottom:1px solid #E4E6EA;">
+                                        <p
+                                            style="margin:0;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                            Proprietary Holdings &nbsp;<span
+                                                style="font-size:11px;color:#9EA3AE;font-weight:400;">Value ₦1,446.81m
+                                                &nbsp;·&nbsp; Cost ₦982.29m &nbsp;·&nbsp;</span><span
+                                                style="font-size:11px;font-weight:700;color:#1A7A4A;">Net gain +₦464.52m
+                                                (+47.3%)</span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr style="background:#F8F9FB;border-bottom:1px solid #E4E6EA;">
+                                                <td
+                                                    style="padding:8px 14px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Equity</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Current (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Cost (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Gain (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Return</td>
+                                                <td align="center"
+                                                    style="padding:8px 14px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Action</td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    TIP</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    370.00</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    95.00</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +275.00</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +289.5%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#FFF8E6;color:#8A6000;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">ACCUMULATE</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    MTNN</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    417.50</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    377.41</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +40.10</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +10.6%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">HOLD</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    ZICHIS</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    10.30</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    2.19</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +8.12</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +370.8%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#FDECEA;color:#C0392B;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">SELL</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    DANGCEM</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    354.00</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    247.12</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +106.88</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +43.3%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">RETAIN</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    GTCO</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    295.00</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    260.58</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +34.42</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +13.2%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#E6F5EE;color:#1A7A4A;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">BUY</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="background:#F8F9FB;border-top:2px solid #E4E6EA;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    Total</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    1,446.80</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    982.29</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +464.52</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +47.3%</td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 07 TBAM PORTFOLIO -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        07</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        Quoted Equities — TBAM Portfolio</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;overflow:hidden;">
+                                <tr>
+                                    <td style="background:#F8F9FB;padding:12px 18px;border-bottom:1px solid #E4E6EA;">
+                                        <p
+                                            style="margin:0;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                            TBAM Holdings &nbsp;<span
+                                                style="font-size:11px;color:#9EA3AE;font-weight:400;">Value
+                                                ₦1,446.81m
+                                                &nbsp;·&nbsp; Cost ₦982.29m &nbsp;·&nbsp;</span><span
+                                                style="font-size:11px;font-weight:700;color:#C0392B;">Net loss -₦4.91m
+                                                (+47.3%)</span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr style="background:#F8F9FB;border-bottom:1px solid #E4E6EA;">
+                                                <td
+                                                    style="padding:8px 14px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Equity</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Current (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Cost (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Gain (₦m)</td>
+                                                <td align="right"
+                                                    style="padding:8px 10px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Return</td>
+                                                <td align="center"
+                                                    style="padding:8px 14px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Action</td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    ARADEL</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    370.00</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    62.06</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +275.00</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +289.5%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">HOLD</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    MTNN</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    417.50</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    46.22</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +40.10</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +10.6%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">HOLD</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    ZENITH</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    10.30</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    24.28</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +8.12</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +370.8%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">HOLD</span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    UACN</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    354.00</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;color:#0c0d0f;font-family:Arial,sans-serif;">
+                                                    31.37</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +106.88</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +43.3%</td>
+                                                <td align="center" style="padding:10px 14px;"><span
+                                                        style="background:#EBF2FF;color:#1A5FBF;font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;font-family:Arial,sans-serif;">HOLD</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr style="background:#F8F9FB;border-top:2px solid #E4E6EA;">
+                                                <td
+                                                    style="padding:10px 14px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    Total</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    1,446.80</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                    163.73</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +464.52</td>
+                                                <td align="right"
+                                                    style="padding:10px 10px;font-size:12px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    +47.3%</td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ 08 · FX ══════════════════ -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        08</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        FX Market Update</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <!-- Official -->
+                                    <td width="33%" valign="top" style="padding-right:5px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                            style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;">
+                                            <tr>
+                                                <td style="padding:16px 14px;">
+                                                    <p
+                                                        style="margin:0 0 8px;font-size:9px;font-weight:700;color:#9EA3AE;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        OFFICIAL (CBN)</p>
+                                                    <p
+                                                        style="margin:0 0 5px;font-size:18px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                        ₦1,370.56/$</p>
+                                                    <p
+                                                        style="margin:0 0 3px;font-size:11px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                        ▲ Firmed ₦5.06</p>
+                                                    <p
+                                                        style="margin:0;font-size:11px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                        Prev: ₦1,375.62/$</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Parallel -->
+                                    <td width="33%" valign="top" style="padding:0 5px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                            style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;">
+                                            <tr>
+                                                <td style="padding:16px 14px;">
+                                                    <p
+                                                        style="margin:0 0 8px;font-size:9px;font-weight:700;color:#9EA3AE;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        PARALLEL MARKET</p>
+                                                    <p
+                                                        style="margin:0 0 5px;font-size:18px;font-weight:700;color:#0A2E6E;font-family:Arial,sans-serif;">
+                                                        ₦1,400.00/$</p>
+                                                    <p
+                                                        style="margin:0 0 3px;font-size:11px;font-weight:700;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                        ● Stable</p>
+                                                    <p
+                                                        style="margin:0;font-size:11px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                        Prev: ₦1,400.00/$</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Spread -->
+                                    <td width="33%" valign="top" style="padding-left:5px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                            style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;">
+                                            <tr>
+                                                <td style="padding:16px 14px;">
+                                                    <p
+                                                        style="margin:0 0 8px;font-size:9px;font-weight:700;color:#9EA3AE;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        SPREAD</p>
+                                                    <p
+                                                        style="margin:0 0 5px;font-size:18px;font-weight:700;color:#8A6000;font-family:Arial,sans-serif;">
+                                                        ₦29.44</p>
+                                                    <p
+                                                        style="margin:0 0 3px;font-size:11px;font-weight:700;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                        2.15% premium</p>
+                                                    <p
+                                                        style="margin:0;font-size:11px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                        Narrowing</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ 09 · LIQUIDITY ══════════════════ -->
+                    <tr>
+                        <td style="padding:6px 0 8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="1%"
+                                        style="background:#0A2E6E;padding:6px 12px;border-radius:3px 0 0 3px;white-space:nowrap;font-size:9px;font-weight:700;color:#FFFFFF;letter-spacing:2px;font-family:Arial,sans-serif;">
+                                        09</td>
+                                    <td
+                                        style="background:#EBF2FF;padding:6px 14px;border-radius:0 3px 3px 0;font-size:10px;font-weight:700;color:#0A2E6E;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                        Liquidity Metrics</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding-bottom:8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;overflow:hidden;">
+                                <tr>
+                                    <td style="background:#F8F9FB;padding:12px 18px;border-bottom:1px solid #E4E6EA;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td>
+                                                    <p
+                                                        style="margin:0;font-size:13px;font-weight:700;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                        Regulatory &amp; Internal Limits</p>
+                                                    <p
+                                                        style="margin:2px 0 0;font-size:11px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                        Position as at 23rd April 2026</p>
+                                                </td>
+                                                <td align="right"><span
+                                                        style="background:#FDECEA;color:#C0392B;font-size:10px;font-weight:700;padding:4px 10px;border-radius:4px;font-family:Arial,sans-serif;">2
+                                                        BREACHES</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr style="background:#F8F9FB;border-bottom:1px solid #E4E6EA;">
+                                                <td
+                                                    style="padding:8px 16px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Metric</td>
+                                                <td align="center"
+                                                    style="padding:8px 12px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Limit</td>
+                                                <td align="right"
+                                                    style="padding:8px 12px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Position</td>
+                                                <td align="center"
+                                                    style="padding:8px 16px;font-size:10px;font-weight:700;color:#9EA3AE;letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                    Status</td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    Liquidity Coverage Ratio</td>
+                                                <td align="center"
+                                                    style="padding:11px 12px;font-size:12px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                    &gt; 100%</td>
+                                                <td align="right"
+                                                    style="padding:11px 12px;font-size:13px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    153.21%</td>
+                                                <td align="center" style="padding:11px 16px;"><span
+                                                        style="background:#E6F5EE;color:#1A7A4A;font-size:10px;font-weight:700;padding:3px 9px;border-radius:3px;font-family:Arial,sans-serif;">✓
+                                                        compliant</span></td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;background:#FFFAFA;">
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    Liquidity Ratio</td>
+                                                <td align="center"
+                                                    style="padding:11px 12px;font-size:12px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                    &gt; 30%</td>
+                                                <td align="right"
+                                                    style="padding:11px 12px;font-size:13px;font-weight:700;color:#C0392B;font-family:Arial,sans-serif;">
+                                                    28.62%</td>
+                                                <td align="center" style="padding:11px 16px;"><span
+                                                        style="background:#FDECEA;color:#C0392B;font-size:10px;font-weight:700;padding:3px 9px;border-radius:3px;font-family:Arial,sans-serif;">✗
+                                                        BREACH</span></td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    Loans to Deposit Ratio</td>
+                                                <td align="center"
+                                                    style="padding:11px 12px;font-size:12px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                    &lt; 50%</td>
+                                                <td align="right"
+                                                    style="padding:11px 12px;font-size:13px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    5.59%</td>
+                                                <td align="center" style="padding:11px 16px;"><span
+                                                        style="background:#E6F5EE;color:#1A7A4A;font-size:10px;font-weight:700;padding:3px 9px;border-radius:3px;font-family:Arial,sans-serif;">✓
+                                                        compliant</span></td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;">
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    FX / Total Assets</td>
+                                                <td align="center"
+                                                    style="padding:11px 12px;font-size:12px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                    &lt; 25%</td>
+                                                <td align="right"
+                                                    style="padding:11px 12px;font-size:13px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    0.78%</td>
+                                                <td align="center" style="padding:11px 16px;"><span
+                                                        style="background:#E6F5EE;color:#1A7A4A;font-size:10px;font-weight:700;padding:3px 9px;border-radius:3px;font-family:Arial,sans-serif;">✓
+                                                        compliant</span></td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid #F0F1F4;background:#FFFAFA;">
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    Securities / Total Assets</td>
+                                                <td align="center"
+                                                    style="padding:11px 12px;font-size:12px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                    &gt; 40%</td>
+                                                <td align="right"
+                                                    style="padding:11px 12px;font-size:13px;font-weight:700;color:#C0392B;font-family:Arial,sans-serif;">
+                                                    11.89%</td>
+                                                <td align="center" style="padding:11px 16px;"><span
+                                                        style="background:#FDECEA;color:#C0392B;font-size:10px;font-weight:700;padding:3px 9px;border-radius:3px;font-family:Arial,sans-serif;">✗
+                                                        BREACH</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="padding:11px 16px;font-size:12px;color:#1A1D23;font-family:Arial,sans-serif;">
+                                                    Financial Stability Ratio</td>
+                                                <td align="center"
+                                                    style="padding:11px 12px;font-size:12px;color:#9EA3AE;font-family:Arial,sans-serif;">
+                                                    ≥ 100%</td>
+                                                <td align="right"
+                                                    style="padding:11px 12px;font-size:13px;font-weight:700;color:#1A7A4A;font-family:Arial,sans-serif;">
+                                                    541.24%</td>
+                                                <td align="center" style="padding:11px 16px;"><span
+                                                        style="background:#E6F5EE;color:#1A7A4A;font-size:10px;font-weight:700;padding:3px 9px;border-radius:3px;font-family:Arial,sans-serif;">✓
+                                                        compliant</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- BREACH ALERT -->
+                    <tr>
+                        <td style="padding-bottom:10px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="4" style="background:#C0392B;border-radius:2px 0 0 2px;">&nbsp;</td>
+                                    <td
+                                        style="background:#FDECEA;border:1px solid #F5C0BB;border-left:none;border-radius:0 6px 6px 0;padding:12px 16px;font-size:12px;color:#6B1F1A;line-height:1.7;font-family:Arial,sans-serif; text-align: justify;">
+                                        <strong style="color:#C0392B; ">⚠ Breaches noted:</strong> The <strong>Liquidity
+                                            Ratio</strong> (28.62%) is below the 30% regulatory threshold, and
+                                        <strong>Securities/Total Assets</strong> (11.89%) is materially below the 40%
+                                        minimum. All other metrics are within acceptable limits. Immediate management
+                                        review is recommended.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ══════════════════ FOOTER ══════════════════ -->
+                    <tr>
+                        <td>
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="background:#FFFFFF;border:1px solid #E4E6EA;border-radius:8px;">
+                                <tr>
+                                    <td style="padding:20px 24px 16px;">
+                                        <p
+                                            style="margin:0;font-size:13px;color:#4A5060;line-height:1.8;font-family:Arial,sans-serif;">
+                                            Regards,<br>
+                                            <strong style="color:#0A2E6E;">Market Risk </strong><br>
+                                            <span style="color:#9EA3AE;font-size:12px;"><STrong>TrustBanc</STrong>
+                                                &nbsp;·&nbsp; <STrong>Market Risk Report</STrong> &nbsp;·&nbsp;
+                                                <STrong>21 May 2026</STrong></span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 24px 18px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td
+                                                    style="border-top:1px solid #EEF0F3;padding-top:14px;font-size:10px;color:#262729;line-height:1.6;font-family:Arial,sans-serif; text-align: justify;">
+                                                    This report is prepared for internal use only and is intended solely
+                                                    for the named recipient. The information contained herein is based
+                                                    on data available at the time of preparation and may be subject to
+                                                    revision. Past performance is not indicative of future results.
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <!-- /INNER CONTAINER -->
             </td>
-    
-            <td align="right" valign="top">
-                <div class="date-pill">14 MAY 2026</div>
-                <div class="date-sub">Report date</div>
-            </td>
         </tr>
     </table>
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-            <td width="20%"><div class="kpi">
-                <div class="kpi-label">Portfolio value</div>
-                <div class="kpi-val">₦5.66bn</div>
-            </div></td>
-            <td width="20%"><div class="kpi">
-                <div class="kpi-label">Change vs prior</div>
-                <div class="kpi-val dn">▼ 0.90%</div>
-            </div></td>
-            <td width="20%"><div class="kpi">
-                <div class="kpi-label">Prior value</div>
-                <div class="kpi-val" style="color:#9EA3AE">₦5.68bn</div>
-            </div></td>
-            <td width="20%"><div class="kpi">
-                <div class="kpi-label">USD coverage</div>
-                <div class="kpi-val up">1.04×</div></td>
-            <td width="20%"><div class="kpi">
-                <div class="kpi-label">Liquidity breaches</div>
-                <div class="kpi-val dn">2 of 6</div>
-            </div></td>
-        </tr>
-    </table>
-              
-      </div>
-    </div>
-  
-
-  <!-- SALUTATION -->
-  <div class="salutation">
-    Dear Sir,<br>
-    Kindly find the Market Risk Report below as of <strong style="color:#0A2E6E">15th May 2026</strong> for your review. The report covers portfolio performance, asset-class updates, FX movements, and liquidity metrics.
-  </div>
-
-  <!-- 01 · PORTFOLIO OVERVIEW -->
-  <div class="section-label">
-    <span class="sec-num">01</span>
-    <span class="sec-title">Portfolio Overview</span>
-    <div class="sec-line"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div>
-        <div class="card-head-title">Total Securities Portfolio</div>
-        <div class="card-head-sub">Composition as at 14 May 2026</div>
-      </div>
-      <span style="background:#FDECEA;color:#C0392B;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px">▼ 0.90% MTM decline</span>
-    </div>
-    <div class="alloc-body">
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;">
-
-    <!-- EUROBONDS -->
-    <tr>
-        <td style="font-size:13px;color:#1A1D23;font-weight:500;padding-bottom:6px;">
-            <strong>Eurobonds</strong>
-        </td>
-
-        <td align="right" style="font-size:13px;font-weight:700;color:#0A2E6E;padding-bottom:6px;">
-            54.95%
-        </td>
-
-        <td align="right" style="font-size:11px;color:#9EA3AE;padding-bottom:6px;width:90px;">
-            ₦3.11bn
-        </td>
-    </tr>
-
-    <tr>
-        <td colspan="3" style="padding-bottom:12px;">
-            <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    <td style="background:#EEF0F3;border-radius:3px;">
-                        <table width="54.95%">
-                            <tr>
-                                <td style="background:#1A8FBF;height:8px;"></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-
- 
-
-    <!-- NTB -->
-    <tr>
-        <td style="font-size:13px;color:#1A1D23;font-weight:500;padding-bottom:6px;">
-            <strong>Nigerian Treasury Bills</strong>
-        </td>
-
-        <td align="right" style="font-size:13px;font-weight:700;color:#0A2E6E;padding-bottom:6px;">
-            1.13%
-        </td>
-
-        <td align="right" style="font-size:11px;color:#9EA3AE;padding-bottom:6px;width:90px;">
-            ₦64.01m
-        </td>
-    </tr>
-
-    <tr>
-        <td colspan="3" style="padding-bottom:6px;">
-            <table width="100%">
-                <tr>
-                    <td style="background:#EEF0F3;border-radius:3px;">
-                        <table width="4%"> <!-- small bump so it shows -->
-                            <tr>
-                                <td style="background:#1A8FBF;height:8px;"></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <!-- EQUITIES -->
-    <tr>
-        <td style="font-size:13px;color:#1A1D23;font-weight:500;padding-bottom:6px;">
-            <strong>Equities</strong>
-        </td>
-    
-        <td align="right" style="font-size:13px;font-weight:700;color:#0A2E6E;padding-bottom:6px;">
-            43.79%
-        </td>
-    
-        <td align="right" style="font-size:11px;color:#9EA3AE;padding-bottom:6px;width:90px;">
-            ₦2.48bn
-        </td>
-    </tr>
-    
-    <tr>
-        <td colspan="3" style="padding-bottom:12px;">
-            <table width="100%">
-                <tr>
-                    <td style="background:#EEF0F3;border-radius:3px;">
-                        <table width="43.79%">
-                            <tr>
-                                <td style="background:#1A8FBF;height:8px;"></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-    </div>
-  </div>
-
-  <!-- 02 · EUROBONDS -->
-  <div class="section-label">
-    <span class="sec-num">02</span>
-    <span class="sec-title">Eurobond Portfolio</span>
-    <div class="sec-line"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div>
-        <div class="card-head-title">Access Perpetual &amp; ACCESS 6⅛ 21/09/26</div>
-        <div class="card-head-sub">Prices steady at 99.375 and 99.750 respectively</div>
-      </div>
-      <span style="background:#EBF2FF;color:#1A5FBF;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px">Duration ~0.55×</span>
-    </div>
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="gap: 0; border-top: 10px solid #060d17; border-collapse: collapse;">
-        <tr >
-            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
-                <div class="stat-lbl">THL value</div>
-                <div class="stat-val">₦1.90bn</div>
-            </div></td>
-            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
-                <div class="stat-lbl">THL MTM loss</div>
-                <div class="stat-val dn">−₦74.48m</div>
-            </div></td>
-            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
-                <div class="stat-lbl">THL return</div>
-                <div class="stat-val dn">−3.79%</div>
-            </div>
-        </td>
-        </tr>
-            <tr >
-            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
-                <div class="stat-lbl">TBAM value</div>
-                <div class="stat-val">₦1.22bn</div>
-            </div>
-        </td>
-            <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
-                <div class="stat-lbl">TBAM MTM loss</div>
-                <div class="stat-val dn">−₦46.61m</div>
-            </div>
-        </td>
-        <td width="20%" style="border:1px solid #E4E6EA; padding:12px;"><div class="stat">
-                <div class="stat-lbl">TBAM return</div>
-                <div class="stat-val dn">−3.67%</div>
-            </div>
-        </td>
-        </tr>
-    </table>
-    <div class="narrative">
-      <strong>Market tone:</strong> The global Eurobond market traded with a defensive and mildly bearish tone. Rising global yields, persistent inflation pressures, and geopolitical tensions drove broad-based repricing, while selective demand and liquidity conditions provided limited support. Modified duration of ~0.55× indicates limited sensitivity to interest rate movements.
-    </div>
-  </div>
-
-  <div class="rec-block">
-    <div class="rec-head">Recommendation — Eurobonds</div>
-    Maintain a <strong>defensive and selective approach</strong>. Focus on short-to-mid tenor exposures while limiting duration risk amid rising global yields. Avoid aggressive near-term positioning.
-  </div>
-
-  <!-- 03 · NTB -->
-  <div class="section-label">
-    <span class="sec-num">03</span>
-    <span class="sec-title">Nigerian Treasury Bills</span>
-    <div class="sec-line"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div>
-        <div class="card-head-title">19-Nov-2026 Paper</div>
-        <div class="card-head-sub">Yield: 16.45% — stable</div>
-      </div>
-    </div>
-    
-  </div>
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-        <td width="33%" style="padding-right:5px;">
-            <div class="fx-card">
-                <div class="stat">
-                    <div class="stat-lbl">MTM value</div>
-                    <div class="stat-val">₦64.01m</div>
-                </div>
-            </div>
-        </td>
-
-        <td width="33%" style="padding:0 5px;">
-            <div class="fx-card">
-                <div class="stat">
-                    <div class="stat-lbl">Cost base</div>
-                    <div class="stat-val">₦63.88m</div>
-                </div>
-            </div>
-        </td>
-
-        <td width="33%" style="padding-left:5px;">
-            <div class="fx-card">
-                <div class="stat">
-                    <div class="stat-lbl">MTM gain</div>
-                    <div class="stat-val up">+₦0.13m</div>
-                </div>
-            </div>
-        </td>
-        <td width="33%" style="padding-left:5px;">
-            <div class="fx-card">
-                <div class="stat">
-                    <div class="stat-lbl">Return</div>
-                    <div class="stat-val up">+0.20%</div>
-                </div>            
-            </div>
-        </td>
-    </tr>
-</table>
-  <div class="rec-block">
-    <div class="rec-head">Recommendation — NTBs</div>
-    Maintain a <strong>cautious and selective stance</strong>. Selectively accumulate mid- to long-tenor bills at higher yields. Avoid aggressive near-term positioning.
-  </div>
-
-  <!-- 04 · FCY -->
-  <div class="section-label">
-    <span class="sec-num">04</span>
-    <span class="sec-title">Customer Fund (FCY) — USD</span>
-    <div class="sec-line"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div>
-        <div class="card-head-title">USD Portfolio — Coverage 1.04×</div>
-        <div class="card-head-sub">Adequate liquidity maintained · Ratio unchanged period-on-period</div>
-      </div>
-    </div>
-    <table class="fcy-table">
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Current (USD)</th>
-          <th>Prior (USD)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="item">Eurobond, Coupon &amp; Placements</td>
-          <td class="num">3,826,727.93</td>
-          <td class="num" style="color:#9EA3AE">3,825,221.09</td>
-        </tr>
-        <tr>
-          <td class="item">Client Deposit + Accrued Interest</td>
-          <td class="num">3,664,530.97</td>
-          <td class="num" style="color:#9EA3AE">3,663,997.88</td>
-        </tr>
-        <tr class="total-row">
-          <td class="item">Overall Gain</td>
-          <td class="up">162,196.96</td>
-          <td class="up" style="text-align:right">161,223.21</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 05 · EQUITIES THL -->
-  <div class="section-label">
-    <span class="sec-num">05</span>
-    <span class="sec-title">Quoted Equities — THL Portfolio</span>
-    <div class="sec-line"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div>
-        <div class="card-head-title">THL Holdings</div>
-        <div class="card-head-sub">Value ₦1,041.49m · Cost ₦760.93m · Net gain ₦280.56m (+36.9%)</div>
-      </div>
-    </div>
-    <table class="eq-table">
-      <thead>
-        <tr>
-          <th>Equity</th>
-          <th>Current (₦m)</th>
-          <th>Cost (₦m)</th>
-          <th>Gain (₦m)</th>
-          <th>Return</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="ticker">ARADEL</td>
-          <td class="num">512.50</td>
-          <td class="num">304.88</td>
-          <td class="num gain">+207.62</td>
-          <td class="num gain">+68.1%</td>
-          <td><span class="pill p-retain">Maintain</span></td>
-        </tr>
-        <tr>
-          <td class="ticker">MTNN</td>
-          <td class="num">528.99</td>
-          <td class="num">456.05</td>
-          <td class="num gain">+72.94</td>
-          <td class="num gain">+16.0%</td>
-          <td><span class="pill p-hold">Hold</span></td>
-        </tr>
-        <tr class="total-row">
-          <td>Total</td>
-          <td class="num">1,041.49</td>
-          <td class="num">760.93</td>
-          <td class="num gain">+280.56</td>
-          <td class="num gain">+36.9%</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 06 · EQUITIES PROPRIETARY -->
-  <div class="section-label">
-    <span class="sec-num">06</span>
-    <span class="sec-title">Quoted Equities — Proprietary</span>
-    <div class="sec-line"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div>
-        <div class="card-head-title">Proprietary Holdings</div>
-        <div class="card-head-sub">Value ₦1,446.81m · Cost ₦982.29m · Net gain ₦464.52m (+47.3%)</div>
-      </div>
-    </div>
-    <table class="eq-table">
-      <thead>
-        <tr>
-          <th>Equity</th>
-          <th>Current (₦m)</th>
-          <th>Cost (₦m)</th>
-          <th>Gain (₦m)</th>
-          <th>Return</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="ticker">TIP</td>
-          <td class="num">370.00</td>
-          <td class="num">95.00</td>
-          <td class="num gain">+275.00</td>
-          <td class="num gain">+289.5%</td>
-          <td><span class="pill p-acc">Accumulate</span></td>
-        </tr>
-        <tr>
-          <td class="ticker">MTNN</td>
-          <td class="num">417.50</td>
-          <td class="num">377.41</td>
-          <td class="num gain">+40.10</td>
-          <td class="num gain">+10.6%</td>
-          <td><span class="pill p-hold">Hold</span></td>
-        </tr>
-        <tr>
-          <td class="ticker">ZICHIS</td>
-          <td class="num">10.30</td>
-          <td class="num">2.19</td>
-          <td class="num gain">+8.12</td>
-          <td class="num gain">+370.8%</td>
-          <td><span class="pill p-sell">Sell</span></td>
-        </tr>
-        <tr>
-          <td class="ticker">DANGCEM</td>
-          <td class="num">354.00</td>
-          <td class="num">247.12</td>
-          <td class="num gain">+106.88</td>
-          <td class="num gain">+43.3%</td>
-          <td><span class="pill p-retain">Retain</span></td>
-        </tr>
-        <tr>
-          <td class="ticker">GTCO</td>
-          <td class="num">295.00</td>
-          <td class="num">260.58</td>
-          <td class="num gain">+34.42</td>
-          <td class="num gain">+13.2%</td>
-          <td><span class="pill p-buy">Buy</span></td>
-        </tr>
-        <tr class="total-row">
-          <td>Total</td>
-          <td class="num">1,446.80</td>
-          <td class="num">982.29</td>
-          <td class="num gain">+464.52</td>
-          <td class="num gain">+47.3%</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 07 · FX -->
-  <div class="section-label">
-    <span class="sec-num">07</span>
-    <span class="sec-title">FX Market Update</span>
-    <div class="sec-line"></div>
-  </div>
-
-  
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr>
-    <td width="33%" style="padding-right:5px;">
-    <div class="fx-card">
-        <div class="fx-lbl">Official window (CBN)</div>
-        <div class="fx-rate">₦1,370.56/$</div>
-        <div class="fx-chg up">▲ Naira firmed ₦5.06</div>
-        <div class="fx-prev">Previous: ₦1,375.62/$</div>
-    </div>
-    </td>
-
-    <td width="33%" style="padding:0 5px;">
-    <div class="fx-card">
-        <div class="fx-lbl">Parallel market</div>
-        <div class="fx-rate">₦1,400.00/$</div>
-        <div class="fx-chg flat">● Stable</div>
-        <div class="fx-prev">Previous: ₦1,400.00/$</div>
-    </div>
-    </td>
-
-    <td width="33%" style="padding-left:5px;">
-    <div class="fx-card">
-        <div class="fx-lbl">Official/Parallel spread</div>
-        <div class="fx-rate" style="color:#8A6000">₦29.44</div>
-        <div class="fx-chg flat">2.15% premium</div>
-        <div class="fx-prev">Spread narrowing</div>
-    </div>
-    </td>
-  </tr>
-</table>
-
-  <!-- 08 · LIQUIDITY -->
-  <div class="section-label">
-    <span class="sec-num">08</span>
-    <span class="sec-title">Liquidity Metrics</span>
-    <div class="sec-line"></div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div>
-        <div class="card-head-title">Regulatory &amp; Internal Limits</div>
-        <div class="card-head-sub">Position as at 23rd April 2026</div>
-      </div>
-      <span style="background:#FDECEA;color:#C0392B;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px">2 breaches</span>
-    </div>
-    <table class="liq-table">
-      <thead>
-        <tr>
-          <th>Metric</th>
-          <th>Limit</th>
-          <th>Position</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="metric-name">Liquidity Coverage Ratio</td>
-          <td class="limit">&gt; 100%</td>
-          <td class="pos ok">153.21%</td>
-          <td class="status"><span class="badge-ok">PASS</span></td>
-        </tr>
-        <tr>
-          <td class="metric-name">Liquidity Ratio</td>
-          <td class="limit">&gt; 30%</td>
-          <td class="pos breach">28.62%</td>
-          <td class="status"><span class="badge-breach">BREACH</span></td>
-        </tr>
-        <tr>
-          <td class="metric-name">Loans to Deposit Ratio</td>
-          <td class="limit">&lt; 50%</td>
-          <td class="pos ok">5.59%</td>
-          <td class="status"><span class="badge-ok">PASS</span></td>
-        </tr>
-        <tr>
-          <td class="metric-name">FX / Total Assets</td>
-          <td class="limit">&lt; 25%</td>
-          <td class="pos ok">0.78%</td>
-          <td class="status"><span class="badge-ok">PASS</span></td>
-        </tr>
-        <tr>
-          <td class="metric-name">Securities / Total Assets</td>
-          <td class="limit">&gt; 40%</td>
-          <td class="pos breach">11.89%</td>
-          <td class="status"><span class="badge-breach">BREACH</span></td>
-        </tr>
-        <tr>
-          <td class="metric-name">Financial Stability Ratio</td>
-          <td class="limit">≥ 100%</td>
-          <td class="pos ok">541.24%</td>
-          <td class="status"><span class="badge-ok">PASS</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="alert" >
-    <strong>⚠ Breaches noted:</strong> The <strong>Liquidity Ratio</strong> (28.62%) is below the 30% regulatory threshold, and <strong>Securities/Total Assets</strong> (11.89%) is materially below the 40% minimum. All other metrics are within acceptable limits. Immediate management review is recommended.
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="footer-sig">
-      Regards,<br>
-      <strong>Market Risk &amp; Treasury Analytics Desk</strong><br>
-      <span style="color:#9EA3AE;font-size:12px">TrustBanc Financial Group &nbsp;·&nbsp; Market Risk Report &nbsp;·&nbsp; 14 May 2026</span>
-    </div>
-    <div class="footer-divider"></div>
-    <div class="footer-disc">
-      This report is prepared for internal use only and is intended solely for the named recipient. The information contained herein is based on data available at the time of preparation and may be subject to revision. Past performance is not indicative of future results. This document does not constitute investment advice.
-    </div>
-  </div>
-
-</div>
-</div>
+    <!-- /OUTER WRAPPER -->
 </body>
+
 </html>
